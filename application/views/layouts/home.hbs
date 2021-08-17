@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <script defer type="text/javascript" src="/public/js/frontendjs.js"></script>
+    {{!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> --}}
+    {{!-- <script defer type="text/javascript" src="/public/js/srcRegistration.js"></script> --}}
+    {{!-- <script type="text/javascript" src="/public/js/srcHome.js"></script> --}}
+</head>
+
+<body>
+    <div id="main-container" class="grid-container">
+        {{> header}}
+        {{#if (emptyObject messages)}}
+        {{> flashmessage}}
+        {{/if}}
+        {{{body}}}
+        {{> footer}}
+    </div>
+
+    {{#if logged}}
+    <script>
+        let elem = document.getElementById('logout-button');
+        if (elem) {
+            elem.onclick = (even) => {
+                fetch('/users/logout', {
+                    method: "POST"
+                })
+                    .then((data) => {
+                        // front-end redirect
+                        location.replace('/');
+                    })
+            }
+        }
+    </script>
+    {{/if}}
+
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+{{!-- <header class="site-header">
+    <nav>
+        <ul class="navbar">
+            <li class="logo"><a href="#">Eddy's Imgur Thingy</a></li>
+            <li class="rightnav"><a href="/postimage">Post Image</a></li>
+            <li class="rightnav button"><a href="/login">Log In</a></li>
+            <li class="rightnav button secondary"><a href="/registration">Sign Up</a></li>
+        </ul>
+    </nav>
+</header> --}}
+<!-- <aside class="site-lsidebar"></aside>
+<aside class="site-rsidebar"></aside> -->
+
+<head>
+    <script defer type="text/javascript" src="/public/js/srcRegistration.js"></script>
+</head>
+
+<div class="container">
+    <form id="formEvent" class="formAlignment" method="POST" action="/users/register"
+        enctype="application/x-www-form-urlencoded">
+        <label for="Username">Username</label>
+        <!-- <input type="text" id="registrationusername" name="username" placeholder="Enter Username" required pattern="[A-Za-z]+" minlength="3"> -->
+        <input type="text" id="registrationusername" name="username" placeholder="Enter Username" required>
+        <div id="requirementUserName" class="hidingDivs">
+            <p id="startLetter"></p>
+            <p id="minThree"></p>
+        </div>
+        <label for="Password">Email</label>
+        {{!-- <input type="email" id="registrationemail" name="email" placeholder="Enter Email" required> --}}
+        <input type="text" id="registrationemail" name="email" placeholder="Enter Email">
+        <div id="requirementEmail" class="hidingDivs">
+            <p>✔ Email is valid</p>
+        </div>
+        <label for="password">Password</label>
+        <input type="password" id="registrationpassword" name="password" placeholder="Enter Password" required>
+        <div id="requirementPassword" class="hidingDivs">
+            <p id="leastEight"></p>
+            <p id="leastUpper"></p>
+            <p id="leastOneNum"></p>
+            <p id="leastSpecial"></p>
+        </div>
+        <label for="confirmpassword">Confirm Password</label>
+        <input type="password" id="registrationconfirmpassword" name="confirmpassword" placeholder="Confirm Password"
+            minlength="8" required>
+        <div id="requirementConfirmPassword" class="hidingDivs">
+            <p id="matchPassword"></p>
+        </div>
+        <!-- <div id="errorMsg"></div> -->
+        <label class="overridelabel" for="ofage">
+            <p>Are you over 13+ years of age?</p>
+            <input class="checkbox" type="checkbox" id="registrationofage" required>
+        </label>
+
+        <label class="overridelabel" for="privacyrules">
+            <p><a class="override" href="/">TOS and Privacy Rules</a></p>
+            <input class="checkbox" type="checkbox" id="registrationtosprivacyrules" required>
+        </label>
+        <input class="submit button" type="submit" id="registrationsubmit" value="Submit" required></input>
+        <!-- <input class="submit button" type="submit" id="registrationsubmit" value="Submit" onclick="submit()"></input> -->
+    </form>
+</div>

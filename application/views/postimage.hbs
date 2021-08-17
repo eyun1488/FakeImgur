@@ -1,0 +1,19 @@
+<div class="container">
+    <form class="formAlignment" action="/post/createPost" method="POST" enctype="multipart/form-data">
+        <label for="title">Enter Title Name:</label>
+        <input class="inputPostImage" type="text" id="title" name="title" placeholder="Enter title name" required>
+
+        <label for="description">Enter Post Description:</label>
+        <input class="inputPostImage" type="text" id="description" name="description" placeholder="Enter description"
+            required>
+
+        <label for="avatar">Choose a picture:</label>
+        <input class="selectPostImage" type="file" name="fileUpload" id="fileUpload" value="fileUpload">
+
+        <label>
+            <p><a class="override" href="/">TOS and Privacy Rules</a></p>
+            <input class="checkbox" type="checkbox" id="registrationtosprivacyrules" name="tosprivacyrules" required>
+        </label>
+        <input class="submit button" type="submit" id="submit" value="Submit"></input>
+    </form>
+</div>

@@ -1,0 +1,543 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* padding: 0;
+    margin: 0; */
+    /* hide scroll with overflow */
+    /* overflow: hidden;  */
+}
+
+body {
+    /* background-image: url("./images/mountains2.jpg"); */
+    /* background-image: url(https://images4.alphacoders.com/144/144554.jpg); */
+    background-color: black;
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    color: white;
+    height: 100vh;
+}
+
+/* body.backgroundC {
+    background-image: none;
+    background-color: black !important;
+} */
+
+/* flash message */
+#flash-message {
+    position: fixed;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%, 0);
+    z-index: 9999;
+}
+
+#flash-message div {
+    text-align: center;
+    background: grey;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.grid-container {
+    display: grid;
+    margin: 20px auto auto auto;
+    /* grid-row: auto;
+    grid-column: auto; */
+    gap: .15rem;
+    grid-auto-rows: 20px 1fr;
+    grid-auto-columns: 1fr;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 120px 1fr 1fr 1fr;
+    grid-template-areas: 
+    "header header header header header"
+    "container container container container container"
+    "container container container container container"
+    "container container container container container";
+}
+
+.site-header {
+    grid-area: header;
+}
+
+li.rightnav {
+    margin-right: 10px;
+}
+
+.container {
+    display: grid;
+    grid-area: container;
+}
+
+.imageGrid {
+    padding-top: .25em;
+    padding-bottom: .25em;
+    display: grid;
+    gap: .2rem .2rem;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-rows: 1fr; */
+    justify-items: center;
+    grid-auto-rows: 1fr;
+    grid-auto-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+    "item item item item item"
+    "item item item item item"
+    "item item item item item";
+    /* "item item item item"; */
+}
+
+.item {
+    width: 355px;
+    height: 300px;
+    border: 1px solid white;
+    border-radius: 40px;
+    text-align: center;
+    padding: 28px;
+}
+
+.images {
+    height: 140px;
+    width: 220px;
+}
+
+/* Imagepost CSS */
+.imagePostGrid {
+    padding-top: .25em;
+    padding-bottom: .25em;
+    display: grid;
+    gap: .2rem .2rem;
+    justify-items: center;
+    grid-auto-rows: 1fr;
+    grid-auto-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: 
+    "imageItem imageItem imageItem imageInfo imageInfo"
+    "imageItem imageItem imageItem messages messages"
+    "imageItem imageItem imageItem messages messages"
+    "imageItem imageItem imageItem messages messages";
+}
+
+.imageItem {
+    grid-area: imageItem;
+}
+
+.imageInfo {
+    grid-area: imageInfo;
+    text-align: center;
+}
+
+.messages {
+    grid-area: messages;
+    text-align: center;
+}
+
+img#imagePostImage {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+/* End of Imagepost CSS */
+
+.formAlignment {
+    display: grid;
+    justify-items: center;
+    text-align: center;
+}
+
+.loginHeight {
+    height: 20px;
+}
+
+/* .site-lsidebar {
+    text-align: center;
+    grid-area: lsidebar;
+}
+.site-rsidebar {
+    text-align: center;
+    grid-area: rsidebar;
+} */
+
+.navbar {
+    list-style: none;
+    background: none;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: end;
+    width: 95%;
+    margin: 2%;
+}
+
+.navbar a{
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    color: white;
+    font-weight: 900;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
+.navbar a:hover {
+    background-color: coral;
+}
+
+.navbar li:first-child { /* grab only logo */
+    margin-right: auto;
+}
+
+input#search-text {
+    float: right;
+    padding: 15px;
+    border: none;
+    margin-right: 16px;
+    font-size: 17px;
+    width: 300px;
+    border-radius: 5px;
+    height: 54px;
+}
+
+#search-button {
+    border: 1px solid white;
+    padding: 18px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+
+/* Content */
+label {
+    width: 90%;
+    margin: 6px;
+}
+
+input {
+    width: 33%;
+    margin-bottom: 15px;
+    border-radius: 17px;
+    padding: .35rem .35rem;
+}
+
+input:invalid {
+    box-shadow: 0 0 5px 1px red;
+}
+
+input:focus:invalid {
+    box-shadow: none;
+}
+
+.checkbox{
+    width: auto !important;
+}
+
+.hidingDivs{
+    display: none;
+    color: red;
+}
+
+
+.inputPostImage {
+    width: 33%;
+    margin-bottom: 15px;
+    border-radius: 17px;
+    padding: .35rem .35rem;
+
+}
+
+.selectPostImage {
+    width: auto;
+    margin-bottom: 15px;
+    border-radius: 17px;
+    padding: 6px 12px;
+}
+
+.row {
+    height: 215px;
+    width: 100%;
+    padding: .15rem;
+}
+
+.box-shadow-dark {
+    border: 1px solid #999999;
+    box-shadow: 0 2px 2px #888888;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+}
+
+.submit.button {
+    box-shadow: 0px 10px 14px -7px #3e7327;
+    background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
+	background-color:#77b55a;
+	border-radius:17px;
+	border:1px solid #4b8f29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #5b8a3c;
+}
+
+
+.postButton {
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 0.5em 1.5em;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: black;
+}
+
+.postButton:hover {
+    background-color: coral;
+}
+/* end of Content */
+
+/* imageInfo */
+#imagePostTitleText {
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#imagePostAuthor {
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#imagePostDescription {
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+#imagePostDate {
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+#messageList {
+    height: 280px;
+    overflow: auto;
+    margin-bottom: 25px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+#commentBoxText {
+    text-align: center;
+    height: 80px;
+    width: 440px;
+    overflow: auto;
+    border-radius: 5px;
+    display: block;
+}
+
+.commentStyleButton{
+    margin-top: 5px;
+    box-shadow: 0px 10px -7px -7px #3e7327;
+    background: linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
+        background-color: rgba(53, 169, 97, 0);
+    background-color: #77b55a;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 5px 25px;
+    color: white;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #5b8a3c;
+}
+
+/* end of imageInfo */
+
+/* Junk - Anthony please ignore everything below here as I was trying to test other CSS for fun and education. */
+/* .imagewrap {
+    position: relative;
+}
+
+.imagedescription {
+    font-size: 25px;
+    text-shadow:
+    0px 0px 2px #1040ff,
+    -2px -2px 2px #1040ff,
+    2px -2px 2px #1040ff,
+    -2px 2px 2px #1040ff,
+    2px 2px 2px #1040ff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s, visibility .2s;
+}
+
+.imagewrap:hover .imagedescription {
+    visibility: visible;
+    opacity: 1;
+} */
+
+/* Imagepost.html css  */
+/* .cRow {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 3px;
+}
+
+.cColumn {
+    flex: 50%;
+    padding: 0 3px;
+}
+
+.cColumn img {
+    margin-top: 6px;
+    vertical-align: middle;
+    width:45%;
+    transition: all 0.4s ease;
+    object-fit: cover;
+} */
+/* .submit.button:hover {
+    background:linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
+	background-color:#72b352;
+}
+
+.submit.button:active {
+    position:relative;
+	top:1px;
+} */
+
+/* For flexing heh */
+/* .flex-row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    flex-flow: row;
+    justify-content: center;
+}
+
+div[class*=flx-] {
+    height: 100px;
+}
+
+.flx-md-1 {
+    flex: 0 0 8.33333%;
+    flex-basis: 8.33333%;
+    flex-grow: 0;
+    flex-shrink: 0; 
+    max-width: 8.33333%;
+    min-width: 30px;
+}
+
+.flx-md-3 {
+    flex: 0 0 25%;
+    /* flex-basis: 25%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    max-width: 25%;
+    min-width: 150px;
+}
+
+.flx-md-6 {
+    flex: 0 0 50%; /* grow, shrink, basis */ 
+    /* flex-basis: 50%;
+    flex-grow: 0;
+    flex-shrink: 0; 
+    max-width: 50%;
+    min-width: 300px;
+}
+
+.flex-item {
+    height: 100px;
+    flex-grow: 1;
+} */
+
+
+
+
+
+
+
+/* div[class*=col-]{
+    border: 1px solid black;
+    height: 100px;
+    float: left;
+} */
+/* comment this later */
+/* @media screen and (max-width: 1400px){
+    body {
+        background-image: url("./images/ThinkPos.jpg");
+    }
+} */
+
+/* Fonts
+.serif{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.sanserif {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.monospace {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+} */
+
+/* #loginheader {
+    border-radius: .25rem;
+    border: .1rem solid hsl(0, 0%, 100%);
+    box-shadow: 2px 2px 2px #b091a0;
+    margin: 0 0 5px 0;
+} */
+
+/* h1 {
+    text-align: center;
+}
+
+form {
+    overflow: hidden;
+}
+
+label {
+    float: left;
+    width: 200px;
+    padding-right: 24px;
+}
+
+input {
+    float: left;
+    width: calc(20% - 20px);
+}
+
+button {
+    float: right;
+    width: calc(20% - 20px);
+} */
+
+/* header {
+    float: none;
+    text-align: center;
+    text-shadow: 3px slategray;
+} */

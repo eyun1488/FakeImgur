@@ -1,0 +1,31 @@
+<div class="container imagePostGrid">
+    <div class="imageItem">
+        <img id="imagePostImage" class="images" src="../{{currentPost.photopath}}" alt="Missing Image">
+    </div>
+    <div class="imageInfo">
+        <header id="imagePostTitle">
+            <h3 id="imagePostTitleText">{{currentPost.title}}</h3>
+        </header>
+        <div id="imagePostAuthor">{{currentPost.username}}</div>
+        <div id="imagePostDescription">{{currentPost.description}}</div>
+        <div id="imagePostDate">{{currentPost.created}}</div>
+    </div>
+    <div class="messages">
+        <header id="commentTitle">
+            <h2>Comments</h2>
+        </header>
+        <div id="messageList">
+            {{#each comments}}
+            <p>Comment: {{this.description}}</p>
+            <p>{{this.created}}</p>
+            {{/each}}
+        </div>
+        <div id="commentBox">
+            <form action="/post/comments" method="POST">
+                <textarea name="comment" class="commentBoxText" id="commentBoxText"></textarea>
+                <button class="commentStyleButton" type="submit"><i class="commentBoxButton" id="commentBoxButton"
+                        class="fa faComment" aria-hidden="true" style="text-align: center;">Submit</i></button>
+            </form>
+        </div>
+    </div>
+</div>
